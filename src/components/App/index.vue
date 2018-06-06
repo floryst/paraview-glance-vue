@@ -29,57 +29,34 @@
       <v-toolbar-title>ParaView Glance</v-toolbar-title>
       <v-spacer />
       <v-btn
+        :class="$style.toolbarButton"
         flat
-        class="toolbar-button"
       >
         <v-icon>folder</v-icon>
         <span>Open</span>
       </v-btn>
       <v-btn
+        :class="$style.toolbarButton"
         flat
-        class="toolbar-button"
       >
         <v-icon>collections</v-icon>
         <span>Screenshots (0)</span>
       </v-btn>
       <v-btn
+        :class="$style.toolbarButton"
         flat
-        class="toolbar-button"
       >
         <v-icon>help</v-icon>
         <span>About</span>
       </v-btn>
     </v-toolbar>
-    <v-content class="app-content">
+    <v-content :class="$style.appContent">
       <view-layout />
     </v-content>
   </v-app>
 </template>
 
-<style scoped>
-.app-content {
-  /* need a fixed height of arbitrary value
-   * so the vtk viewers don't grow too much in
-   * height when resizing. */
-  height: 0;
-}
-.toolbar-button span {
-  margin-left: 4px;
-}
+<style module src="./App.css">
 </style>
-
-<script>
-import ViewLayout from 'paraview-glance/src/components/ViewLayout';
-
-const data = () => ({
-  sidebar: true,
-  activeTab: 0,
-});
-
-export default {
-  components: {
-    ViewLayout,
-  },
-  data,
-};
+<script src="./App.js">
 </script>
